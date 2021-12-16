@@ -1,6 +1,8 @@
 NAME = push_swap
 CFLAGS = -Wall -Wextra -Werror
-SRC_FILES = push_swap.c validation.c
+SRC_FILES = push_swap.c \
+			validation.c \
+			numlists.c 
 SRC_DIR = ./srcs/
 INCLUDES = ./includes/
 LIBFT = ./libft/

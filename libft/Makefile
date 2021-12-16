@@ -18,8 +18,7 @@ OBJS_BONUS = $(BONUS:.c=.o)
 .c.o:
 	gcc $(CFLAGS) -g -c $< -o $(<:.c=.o)
 
-$(NAME): $(OBJS)
-	ar rc $(NAME) $(OBJS)
+$(NAME): all
 
 all: $(OBJS) $(OBJS_BONUS)
 	ar rcs ${NAME} ${OBJS} ${OBJS_BONUS}
