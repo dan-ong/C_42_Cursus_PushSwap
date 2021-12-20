@@ -6,12 +6,11 @@
 /*   By: dong <dong@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 22:56:20 by dong              #+#    #+#             */
-/*   Updated: 2021/12/17 00:07:52 by dong             ###   ########.fr       */
+/*   Updated: 2021/12/20 16:14:37 by dong             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 /*Allocates with malloc and returns a new element. The new list element content
 	is initialised with the number. The variable 'next' is initialized to NULL.
@@ -48,20 +47,7 @@ void	num_lstadd_back(t_numlist **lst, t_numlist *new)
 	}
 	end = num_lstlast(*lst);
 	end->next = new;
-}
-
-void	num_lstprint(t_numlist *lst)
-{
-	t_numlist	*yep;
-
-	if (!lst)
-		return;
-	yep = lst;
-	while (yep)
-	{
-		ft_putnbr_fd(yep->num, 1);
-		yep = yep->next;
-	}
+	return ;
 }
 
 /*Finds the last element of the list.
@@ -97,4 +83,23 @@ void	num_lstclear(t_numlist **lst)
 	}
 	lst = NULL;
 	tmp = NULL;
+	return ;
+}
+
+/*Counts the number of elements in a list.*/
+int	num_lstsize(t_numlist *lst)
+{
+	int			yep;
+	t_numlist	*oki;
+
+	if (!lst)
+		return (0);
+	oki = lst;
+	yep = 0;
+	while (oki)
+	{
+		oki = oki->next;
+		yep++;
+	}
+	return (yep);
 }
