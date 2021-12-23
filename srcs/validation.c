@@ -6,7 +6,7 @@
 /*   By: dong <dong@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 16:58:04 by dong              #+#    #+#             */
-/*   Updated: 2021/12/24 03:45:01 by dong             ###   ########.fr       */
+/*   Updated: 2021/12/24 04:22:02 by dong             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,24 @@ int	check_args(int argc, char **argv)
 {
 	int	i;
 	int	j;
+	int	hasnum;
 
 	i = 1;
 	j = 0;
+	hasnum = 0;
 	while (i < argc)
 	{
+		hasnum = 0;
 		while (argv[i][j])
 		{
-			if (!(ft_isdigit(argv[i][j]) || argv[i][0] == '-'))
-			{
-				ft_putstr_fd("Error\n", 2);
+			if (!(ft_isdigit(argv[i][j]) || (j == 0 && argv[i][0] == '-')))
 				return (0);
-			}
+			if (ft_isdigit(argv[i][j]))
+				hasnum = 1;
 			j++;
 		}
+		if (j > 11 || hasnum == 0)
+			return (0);
 		j = 0;
 		i++;
 	}
