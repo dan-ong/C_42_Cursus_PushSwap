@@ -6,7 +6,7 @@
 /*   By: dong <dong@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 17:11:10 by dong              #+#    #+#             */
-/*   Updated: 2021/12/20 16:43:27 by dong             ###   ########.fr       */
+/*   Updated: 2021/12/24 02:39:12 by dong             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,7 @@ void	num_lstprint(t_numlist *lst);
 int	numlst_sorted(t_numlist *numlst, char c);
 int	num_lstmin(t_numlist *numlst);
 int	num_lstmax(t_numlist *numlst);
+int	num_lstloc(t_numlist *numlst, int number);
+int	num_lstavg(t_numlist *list_a, t_numlist *list_b);
 
 #endif

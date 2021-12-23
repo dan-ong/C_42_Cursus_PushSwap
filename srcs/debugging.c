@@ -6,7 +6,7 @@
 /*   By: dong <dong@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 15:15:34 by dong              #+#    #+#             */
-/*   Updated: 2021/12/20 16:14:29 by dong             ###   ########.fr       */
+/*   Updated: 2021/12/24 03:18:59 by dong             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	num_lstprint(t_numlist *lst)
 	while (yep)
 	{
 		ft_putnbr_fd(yep->num, 1);
+		ft_putstr_fd(" ", 1);
 		yep = yep->next;
 	}
 	return ;

@@ -6,7 +6,7 @@
 /*   By: dong <dong@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 16:31:13 by dong              #+#    #+#             */
-/*   Updated: 2021/12/20 16:42:44 by dong             ###   ########.fr       */
+/*   Updated: 2021/12/24 03:22:37 by dong             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,4 +72,48 @@ int	num_lstmax(t_numlist *numlst)
 		checker = checker->next;
 	}
 	return (max);
+}
+
+/* returns index of number in list*/
+int	num_lstloc(t_numlist *numlst, int number)
+{
+	t_numlist	*lst;
+	int			loc;
+
+	lst = numlst;
+	loc = 0;
+	while (lst)
+	{
+		if (lst->num == number)
+			return (loc);
+		loc++;
+		lst = lst->next;
+	}
+	return (-1);
+}
+
+/* Returns average number for both lists*/
+int	num_lstavg(t_numlist *list_a, t_numlist *list_b)
+{
+	t_numlist	*lst;
+	int			sum;
+	int			count;
+
+	lst = list_a;
+	sum = 0;
+	count = 0;
+	while (lst)
+	{
+		sum += lst->num;
+		count++;
+		lst = lst->next;
+	}
+	lst = list_b;
+	while (lst)
+	{
+		sum += lst->num;
+		count++;
+		lst = lst->next;
+	}
+	return (sum / count);
 }
