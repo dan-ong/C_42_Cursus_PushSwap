@@ -6,7 +6,7 @@
 /*   By: dong <dong@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 16:58:04 by dong              #+#    #+#             */
-/*   Updated: 2021/12/24 04:22:02 by dong             ###   ########.fr       */
+/*   Updated: 2021/12/24 23:36:47 by dong             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,23 +17,20 @@ int	check_args(int argc, char **argv)
 {
 	int	i;
 	int	j;
-	int	hasnum;
 
 	i = 1;
 	j = 0;
-	hasnum = 0;
 	while (i < argc)
 	{
-		hasnum = 0;
+		if (num_checkatoi(argv[i]) == 0)
+			return (0);
 		while (argv[i][j])
 		{
 			if (!(ft_isdigit(argv[i][j]) || (j == 0 && argv[i][0] == '-')))
 				return (0);
-			if (ft_isdigit(argv[i][j]))
-				hasnum = 1;
 			j++;
 		}
-		if (j > 11 || hasnum == 0)
+		if (j > 11)
 			return (0);
 		j = 0;
 		i++;
@@ -80,5 +77,35 @@ int	in_numlist(int checknum, t_numlist *numlist)
 			return (0);
 		tmp = tmp->next;
 	}
+	return (1);
+}
+
+/*Converts string to integer and checks if overflow occurs.
+	Returns 0 if overflow condition is met.*/
+int	num_checkatoi(const char *str)
+{
+	const char	*s;
+	long		result;
+	int			neg;
+	int			hasnum;
+
+	neg = 1;
+	s = str;
+	result = 0;
+	hasnum = 0;
+	if (*s == '-')
+	{
+		neg = -1;
+		s++;
+	}
+	while (*s && (*s >= '0' && *s <= '9'))
+	{
+		result = 10 * result + *s - '0';
+		hasnum = 1;
+		s++;
+	}
+	result *= neg;
+	if (result > 2147483647 || result < -2147483648 || hasnum == 0)
+		return (0);
 	return (1);
 }

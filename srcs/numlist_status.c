@@ -6,7 +6,7 @@
 /*   By: dong <dong@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 16:31:13 by dong              #+#    #+#             */
-/*   Updated: 2021/12/24 03:22:37 by dong             ###   ########.fr       */
+/*   Updated: 2021/12/24 23:43:05 by dong             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	numlst_sorted(t_numlist *numlst, char c)
 
 	if (!(c == 'a' || c == 'd'))
 	{
-		ft_putstr_fd("Error\n", 2);
+		ft_putstr_fd("Function call error, use 'a' or 'd'", 2);
 		return (0);
 	}
 	if (!numlst)
@@ -95,9 +95,9 @@ int	num_lstloc(t_numlist *numlst, int number)
 /* Returns average number for both lists*/
 int	num_lstavg(t_numlist *list_a, t_numlist *list_b)
 {
-	t_numlist	*lst;
-	int			sum;
-	int			count;
+	t_numlist		*lst;
+	long long int	sum;
+	int				count;
 
 	lst = list_a;
 	sum = 0;
@@ -115,5 +115,6 @@ int	num_lstavg(t_numlist *list_a, t_numlist *list_b)
 		count++;
 		lst = lst->next;
 	}
-	return (sum / count);
+	sum /= count;
+	return (sum);
 }

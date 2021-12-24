@@ -6,7 +6,7 @@
 /*   By: dong <dong@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 17:11:10 by dong              #+#    #+#             */
-/*   Updated: 2021/12/24 02:39:12 by dong             ###   ########.fr       */
+/*   Updated: 2021/12/24 23:18:31 by dong             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void	push_swapper(t_numlist **list_a, t_numlist **list_b);
 int			check_args(int argc, char **argv);
 t_numlist	*make_me_a_list(int argc, char **argv);
 int			in_numlist(int num, t_numlist *numlist);
+int			num_checkatoi(const char *str);
 
 // numlists.c
 t_numlist	*num_lstnew(int num);

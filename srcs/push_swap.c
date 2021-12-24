@@ -6,7 +6,7 @@
 /*   By: dong <dong@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 16:01:32 by dong              #+#    #+#             */
-/*   Updated: 2021/12/24 04:12:16 by dong             ###   ########.fr       */
+/*   Updated: 2021/12/24 23:47:54 by dong             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@ int	main(int argc, char **argv)
 	t_numlist	*list_a;
 	t_numlist	*list_b;
 
-	if (argc < 2 || !check_args(argc, argv))
+	if (argc < 2)
+		return (0);
+	if (!check_args(argc, argv))
 	{
 		ft_putstr_fd("Error\n", 2);
 		return (0);
