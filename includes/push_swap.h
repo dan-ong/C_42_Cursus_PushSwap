@@ -6,12 +6,14 @@
 /*   By: dong <dong@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 17:11:10 by dong              #+#    #+#             */
-/*   Updated: 2021/12/24 23:18:31 by dong             ###   ########.fr       */
+/*   Updated: 2022/02/15 19:48:10 by dong             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
+
+# include "libft.h"
 
 typedef struct s_numlist
 {
@@ -19,9 +21,8 @@ typedef struct s_numlist
 	struct s_numlist	*next;
 }				t_numlist;
 
-# include "libft.h"
 // push_swap.c
-void	push_swapper(t_numlist **list_a, t_numlist **list_b);
+void		push_swapper(t_numlist **list_a, t_numlist **list_b);
 
 // validation.c
 int			check_args(int argc, char **argv);
@@ -37,20 +38,20 @@ t_numlist	*num_lstlast(t_numlist *lst);
 void		num_lstclear(t_numlist **lst);
 
 // numlist_actions.c
-void	num_lstpush(t_numlist **lst_from, t_numlist **lst_to);
-void	num_lstswap(t_numlist **numlst);
-void	num_lstrot(t_numlist **numlst);
-void	num_lstrrot(t_numlist **numlst);
-int		num_lstsize(t_numlist *lst);
+void		num_lstpush(t_numlist **lst_from, t_numlist **lst_to);
+void		num_lstswap(t_numlist **numlst);
+void		num_lstrot(t_numlist **numlst);
+void		num_lstrrot(t_numlist **numlst);
+int			num_lstsize(t_numlist *lst);
 
 // debugging.c
-void	num_lstprint(t_numlist *lst);
+void		num_lstprint(t_numlist *lst);
 
 // numlist_status.c
-int	numlst_sorted(t_numlist *numlst, char c);
-int	num_lstmin(t_numlist *numlst);
-int	num_lstmax(t_numlist *numlst);
-int	num_lstloc(t_numlist *numlst, int number);
-int	num_lstavg(t_numlist *list_a, t_numlist *list_b);
+int			numlst_sorted(t_numlist *numlst, char c);
+int			num_lstmin(t_numlist *numlst);
+int			num_lstmax(t_numlist *numlst);
+int			num_lstloc(t_numlist *numlst, int number);
+int			num_lstavg(t_numlist *list_a, t_numlist *list_b);
 
 #endif
