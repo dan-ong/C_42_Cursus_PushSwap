@@ -1,4 +1,3 @@
-from cgitb import text
 import os
 from os.path import join
 import subprocess
@@ -6,7 +5,7 @@ import subprocess
 pushwap_dir = os.getcwd()
 test_dir = join(pushwap_dir, 'tests')
 
-test_file = open(join(test_dir, "tests.txt"))
+test_file = open(join(test_dir, "tests_100.txt"))
 test_cases = test_file.readlines()
 
 out = []
